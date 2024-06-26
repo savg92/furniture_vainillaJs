@@ -17,47 +17,93 @@ body {
     line-height: 1.6;
 }
 
-/* Header Styles */
+
 header {
-    position: absolute;
-    width: 100%;
-    padding: 20px;
-    z-index: 10;
+  position: absolute;
+  width: 100%;
+  padding: 20px;
+  z-index: 10;
 }
 
 nav {
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 3px 0;
+  transition: 0.4s;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
 }
 
 nav ul {
-    display: flex;
-    list-style-type: none;
+  display: none;
+  list-style-type: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul.show {
+  display: flex;
 }
 
 nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li:hover {
-    border-bottom: 1px solid var(--color-white);
-    width: 50%;
-    display: inline-block;
-    box-sizing: border-box;
+  margin: 20px 0;
 }
 
 nav ul li a {
-    color: var(--color-white);
-    text-decoration: none;
-    text-transform: lowercase;
+  color: black;
+  text-decoration: none;
+  text-transform: lowercase;
+  font-size: 24px;
 }
+
+/* Animated hamburger icon */
+.menu-icon.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-7px, 6px);
+  background-color: var(--color-dark-gray)
+}
+
+.menu-icon.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-7px, -6px);
+    background-color: var(--color-dark-gray)
+}
+
+
+
 
 /* Hero Section Styles */
 #hero {
     display: grid;
     grid-template-columns: 2fr 1fr;
     height: 80vh;
+    /* height: 80% */
 }
 
 .slider {
@@ -188,6 +234,10 @@ h2 {
         grid-template-columns: 1fr;
     }
 
+    #hero #about {
+        height: 40vh;
+    }
+
     .btn-container {
         right: 0;
         bottom: -8%;
@@ -205,6 +255,10 @@ h2 {
 
     nav ul {
         display: none; /* You might want to add a mobile menu here */
+    }
+
+        #hero #about {
+        height: 40vh;
     }
 
     .btn-container {
@@ -233,4 +287,27 @@ h2 {
         position: relative;
         z-index: 1;
     } */
+}
+
+@media (min-width: 768px) {
+    .menu-icon {
+        display: none;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+    }
+
+    nav ul li {
+        margin: 0 0 0 20px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
 }

@@ -56,3 +56,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	// Optional: Auto-play the slider
 	// setInterval(nextSlide, 5000);
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+	const menuToggle = document.getElementById('menuToggle');
+	const menu = document.getElementById('menu');
+
+	menuToggle.addEventListener('click', function () {
+		this.classList.toggle('active');
+		menu.classList.toggle('show');
+	});
+});
