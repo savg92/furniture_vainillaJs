@@ -27,7 +27,7 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
 }
 
@@ -57,7 +57,7 @@ nav ul li a {
 #hero {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    height: 100vh;
+    height: 80vh;
 }
 
 .slider {
@@ -92,8 +92,6 @@ nav ul li a {
     bottom: -3%;
     display: flex;
     z-index: 100;
-    /* justify-items: center;
-    align-items: center; */
 }
 
 .slider-btn {
@@ -121,16 +119,21 @@ nav ul li a {
 }
 
 .hero-content {
-    padding: 50px;
+    /* padding: 50px; */
+    padding: 5% 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 4em;
     font-weight: 600;
     margin-bottom: 20px;
+}
+
+p{
+    color: var(--color-dark-gray);
 }
 
 .hero-content a:hover {
@@ -164,14 +167,15 @@ h1 {
 }
 
 .about-content {
-    padding: 50px;
+    /* padding: 50px; */
+    padding: 5% 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: 700;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -184,10 +188,10 @@ h2 {
         grid-template-columns: 1fr;
     }
 
-    /* .btn-container {
+    .btn-container {
         right: 0;
         bottom: -8%;
-    } */
+    }
 
     #about {
         grid-template-columns: 1fr;
@@ -203,13 +207,12 @@ h2 {
         display: none; /* You might want to add a mobile menu here */
     }
 
-    /* .btn-container {
-        right: 0;
-        bottom: -10%;
-    } */
+    .btn-container {
+        bottom: -8%;
+    }
 
     .hero-content, .about-content {
-        padding: 30px;
+        padding: 3% 5%;
     }
 
     h1 {
@@ -218,11 +221,16 @@ h2 {
 }
 
 @media (min-width: 1025px) {
-    /* .btn-container {
+    .btn-container {
+        position: absolute;
         right: -5%;
-    } */
-    .hero-content {
-        position: relative;
-        z-index: 0;
+        right: -0%;
+        bottom: -3%;
+        z-index: 10;
     }
+
+    /* .hero-content {
+        position: relative;
+        z-index: 1;
+    } */
 }
