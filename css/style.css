@@ -27,8 +27,9 @@ header {
 
 nav {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
+  /* position: fixed; */
 }
 
 .menu-icon {
@@ -38,17 +39,27 @@ nav {
   z-index: 20;
 }
 
+.menu-icon.active + .bar {
+  z-index: 20;
+}
+
 .bar {
   width: 25px;
   height: 3px;
-  background-color: black;
+  background-color: white;
   margin: 3px 0;
   transition: 0.4s;
+  /* position: fixed; */
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
+    font-size: 24px;
+    font-weight: bold;
+    /* justify-self: auto; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    margin: auto;
 }
 
 nav ul {
@@ -58,19 +69,21 @@ nav ul {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 7%;
   background-color: white;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 nav ul.show {
   display: flex;
+  gap: 1rem;
+  /* margin: 0 1rem; */
+  /* z-index: 100; */
 }
 
 nav ul li {
-  margin: 20px 0;
+    margin: 2rem 0 0 0rem;
 }
 
 nav ul li a {
@@ -80,10 +93,12 @@ nav ul li a {
   font-size: 24px;
 }
 
+
 /* Animated hamburger icon */
 .menu-icon.active .bar:nth-child(1) {
   transform: rotate(-45deg) translate(-7px, 6px);
-  background-color: var(--color-dark-gray)
+  background-color: var(--color-dark-gray);
+  /* position: fixed; */
 }
 
 .menu-icon.active .bar:nth-child(2) {
@@ -92,7 +107,8 @@ nav ul li a {
 
 .menu-icon.active .bar:nth-child(3) {
   transform: rotate(45deg) translate(-7px, -6px);
-    background-color: var(--color-dark-gray)
+    background-color: var(--color-dark-gray);
+    /* position: fixed; */
 }
 
 
@@ -102,7 +118,7 @@ nav ul li a {
 #hero {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    height: 80vh;
+    height: 100vh;
     /* height: 80% */
 }
 
@@ -135,9 +151,9 @@ nav ul li a {
 
 .btn-container {
     position: absolute;
-    bottom: -3%;
+    bottom: -4%;
     display: flex;
-    z-index: 100;
+    /* z-index: 100; */
 }
 
 .slider-btn {
@@ -170,6 +186,7 @@ nav ul li a {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* height: inherit; */
 }
 
 h1 {
@@ -235,7 +252,7 @@ h2 {
     }
 
     #hero #about {
-        height: 40vh;
+        height: 100vh;
     }
 
     .btn-container {
@@ -258,11 +275,11 @@ h2 {
     }
 
         #hero #about {
-        height: 40vh;
+        height: 100vh;
     }
 
     .btn-container {
-        bottom: -8%;
+        bottom: -11%;
     }
 
     .hero-content, .about-content {
@@ -309,5 +326,10 @@ h2 {
 
     nav ul li a {
         font-size: 16px;
+        color: var(--color-white);
+    }
+
+    .logo {
+        margin: 0;
     }
 }

@@ -60,9 +60,13 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
 	const menuToggle = document.getElementById('menuToggle');
 	const menu = document.getElementById('menu');
+	// const listItems = menu.querySelectorAll('.header-link');
 
 	menuToggle.addEventListener('click', function () {
 		this.classList.toggle('active');
 		menu.classList.toggle('show');
+		// listItems.forEach((item) => {
+		// 	item.color = 'black';
+		// });
 	});
 });
