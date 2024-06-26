@@ -9,6 +9,8 @@ const textSlide3 =
 	'Our modern furniture store provides a high level of quality. Our company has invested in advanced technology to ensure that every product is made as perfect and as consistent as possible. With three decades of experience in this industry, we understand what customers want for their home and office.';
 
 document.addEventListener('DOMContentLoaded', function () {
+	const menuToggle = document.getElementById('menuToggle');
+	const menu = document.getElementById('menu');
 	const slides = document.querySelectorAll('.slide');
 	const prevBtn = document.querySelector('.slider-btn.prev');
 	const nextBtn = document.querySelector('.slider-btn.next');
@@ -16,28 +18,32 @@ document.addEventListener('DOMContentLoaded', function () {
 	const heroText = document.querySelector('.hero-text');
 	let currentSlide = 0;
 
-	function showSlide(n) {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (n + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
+	menuToggle.addEventListener('click', function () {
+		this.classList.toggle('active');
+		menu.classList.toggle('show');
+	});
 
-    // Update heroTitle and heroText based on the currentSlide
-    switch (currentSlide) {
-        case 1: // Assuming slide 2 is at index 1
-            heroTitle.textContent = titleSlide2;
-            heroText.textContent = textSlide2;
-            break;
-        case 2: // Assuming slide 3 is at index 2
-            heroTitle.textContent = titleSlide3;
-            heroText.textContent = textSlide3;
-            break;
-        default:
-            // Reset to default or handle other slides as necessary
-            heroTitle.textContent = titleSlide1;
-            heroText.textContent = textSlide1;
-            break;
-    }
-}
+	function showSlide(n) {
+		slides[currentSlide].classList.remove('active');
+		currentSlide = (n + slides.length) % slides.length;
+		slides[currentSlide].classList.add('active');
+
+		// Update heroTitle and heroText based on the currentSlide
+		switch (currentSlide) {
+			case 1:
+				heroTitle.textContent = titleSlide2;
+				heroText.textContent = textSlide2;
+				break;
+			case 2:
+				heroTitle.textContent = titleSlide3;
+				heroText.textContent = textSlide3;
+				break;
+			default:
+				heroTitle.textContent = titleSlide1;
+				heroText.textContent = textSlide1;
+				break;
+		}
+	}
 
 	function nextSlide() {
 		showSlide(currentSlide + 1);
@@ -54,19 +60,5 @@ document.addEventListener('DOMContentLoaded', function () {
 	showSlide(0);
 
 	// Optional: Auto-play the slider
-	// setInterval(nextSlide, 5000);
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-	const menuToggle = document.getElementById('menuToggle');
-	const menu = document.getElementById('menu');
-	// const listItems = menu.querySelectorAll('.header-link');
-
-	menuToggle.addEventListener('click', function () {
-		this.classList.toggle('active');
-		menu.classList.toggle('show');
-		// listItems.forEach((item) => {
-		// 	item.color = 'black';
-		// });
-	});
+	setInterval(nextSlide, 7000);
 });

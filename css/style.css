@@ -27,9 +27,7 @@ header {
 
 nav {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
-  /* position: fixed; */
 }
 
 .menu-icon {
@@ -49,16 +47,11 @@ nav {
   background-color: white;
   margin: 3px 0;
   transition: 0.4s;
-  /* position: fixed; */
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
-    /* justify-self: auto; */
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
     margin: auto;
 }
 
@@ -78,8 +71,6 @@ nav ul {
 nav ul.show {
   display: flex;
   gap: 1rem;
-  /* margin: 0 1rem; */
-  /* z-index: 100; */
 }
 
 nav ul li {
@@ -98,7 +89,6 @@ nav ul li a {
 .menu-icon.active .bar:nth-child(1) {
   transform: rotate(-45deg) translate(-7px, 6px);
   background-color: var(--color-dark-gray);
-  /* position: fixed; */
 }
 
 .menu-icon.active .bar:nth-child(2) {
@@ -108,7 +98,6 @@ nav ul li a {
 .menu-icon.active .bar:nth-child(3) {
   transform: rotate(45deg) translate(-7px, -6px);
     background-color: var(--color-dark-gray);
-    /* position: fixed; */
 }
 
 
@@ -119,7 +108,6 @@ nav ul li a {
     display: grid;
     grid-template-columns: 2fr 1fr;
     height: 100vh;
-    /* height: 80% */
 }
 
 .slider {
@@ -153,12 +141,9 @@ nav ul li a {
     position: absolute;
     bottom: -4%;
     display: flex;
-    /* z-index: 100; */
 }
 
 .slider-btn {
-    /* position: absolute; */
-    /* top: 50%; */
     transform: translateY(-50%);
     background: var(--color-black);
     color: var(--color-white);
@@ -181,12 +166,10 @@ nav ul li a {
 }
 
 .hero-content {
-    /* padding: 50px; */
     padding: 5% 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* height: inherit; */
 }
 
 h1 {
@@ -230,7 +213,6 @@ p{
 }
 
 .about-content {
-    /* padding: 50px; */
     padding: 5% 10%;
     display: flex;
     flex-direction: column;
@@ -271,7 +253,7 @@ h2 {
     }
 
     nav ul {
-        display: none; /* You might want to add a mobile menu here */
+        display: none;
     }
 
         #hero #about {
@@ -299,11 +281,6 @@ h2 {
         bottom: -3%;
         z-index: 10;
     }
-
-    /* .hero-content {
-        position: relative;
-        z-index: 1;
-    } */
 }
 
 @media (min-width: 768px) {
